@@ -5,3 +5,7 @@ hello world python
 programming in python is fun
 java is fun
 python is easy
+hello world python
+programming in python is fun
+java is fun
+python is easy

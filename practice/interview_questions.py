@@ -1,4 +1,6 @@
-
+from itertools import chain
+from itertools import islice
+path = r"C:\Users\haris\PycharmProjects\pythonProject2\files_directory\txt_log_files\reading_files\sample.txt"
 """1. Write a program to find the length of the string without using inbuilt function (len)"""
 
 
@@ -79,31 +81,99 @@
 """8. Write program to convert upper case to lower case and vice-versa without using inbuilt method."""
 
 
-def convert(any_string):
-    l = []
-    for c in any_string:
-        temp = ord(c)   # Get the ASCII value of the character
-        if int(temp) >= 97 and temp <= 122:
-            l.append(chr(temp - 32))
+# def convert(any_string):
+#     l = []
+#     for c in any_string:
+#         temp = ord(c)   # Get the ASCII value of the character
+#         if int(temp) >= 97 and temp <= 122:
+#             l.append(chr(temp - 32))
+#
+#         elif int(temp) >= 65 and temp <= 90:
+#             l.append(chr(temp+32))
+#     return ''.join(l)
 
-        elif int(temp) >= 65 and temp <= 90:
-            l.append(chr(temp+32))
-    return ''.join(l)
 
-
-d = convert('Hello WorlD')
-print(d)
+# d = convert('Hello WorlD')
+# print(d)
 
 # Method HB
 
-string_ = "Hello WorlD"
-res = []
-for char in string_:
-    if 65 <= ord(char) <= 90:
-        res.append(chr((ord(char)) + 32))
-    elif 91 <= ord(char) <= 117:
-        res.append(chr((ord(char)) - 32))
-    else:
-        pass
+# string_ = "Hello WorlD"
+# res = []
+# for char in string_:
+#     if 65 <= ord(char) <= 90:
+#         res.append(chr((ord(char)) + 32))
+#     elif 91 <= ord(char) <= 117:
+#         res.append(chr((ord(char)) - 32))
+#     else:
+#         res.append(char)
+# res_new = "".join(res)
+#
+# print(res_new)
 
-print("".join(res))
+"""9. Write program to swap two numbers without using 3rd variable."""
+
+# a = 10
+# b = 20
+# b, a = a, b
+# print(a)
+# print(b)
+
+"""10. Write program to merge two different lists."""
+
+# a = [1, 2, 3]
+# b = [4, 5, 6]
+# c = [*a, *b]
+# print(c)
+
+# a = [1, 2, 3]
+# b = [4, 5, 6]
+# print(a+b)
+
+# Using chain
+# s = chain(a, b)     # Returns an iterator
+# print(list(s))
+
+"""11. Write program to read a random line in a file. (ex. 50, 65, 78th line)"""
+
+
+# def read_random_line(lineno):
+#     with open(path) as f:
+#         line = islice(f, lineno, lineno+1)
+#         return list(line)
+#
+#
+# print(read_random_line(9))
+
+# Alternate Solution
+
+
+# def read_random_line(lineno):
+#     f = open(path)
+#     for index, line in enumerate(f, start=1):
+#         if index == lineno:
+#             return line
+#
+#
+# print(read_random_line(10))
+
+"""12. Write program to read a random lines in a file. (ex. I want read all lines 10th to 15th line)"""
+
+
+# def read_n_lines(start_line, end_line):
+#     with open(path) as f:
+#         s = islice(f, start_line, end_line)
+#         for line in s:
+#             print(line)
+#
+#
+# read_n_lines(1, 15)
+
+# Alternate Solution
+
+# def read_n_lines(start_line, end_line):
+#     with open('Data/access-log.txt') as enumerate(f, start=1):
+#         if index in range(start_line, end_line):
+#            print(line)
+
+# read_n_lines(10, 15)
