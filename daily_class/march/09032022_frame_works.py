@@ -29,14 +29,17 @@ def wait(func):
         return func(*args, **kwargs)
     return wrapper
 
+
 @wait
 def click_element(locator):
     driver.find_element(*locator).click()
+
 
 @wait
 def enter_text(locator, * , value):
     driver.find_element(*locator).clear()
     driver.find_element(*locator).send_keys(value)
+
 
 @wait
 def select_item(locator, *, item):
