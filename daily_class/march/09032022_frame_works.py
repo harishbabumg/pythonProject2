@@ -15,6 +15,7 @@ class _visibility_of_element_located(visibility_of_element_located):
     def __call__(self, driver):
         result = super().__call__(driver)
         if isinstance(result, WebElement):
+        # if result == True:  # not working - Element is loaded in DOM and visible on webpages
             return result.is_enabled()
         else:
             return False
@@ -27,6 +28,7 @@ def wait(func):
         v = _visibility_of_element_located(locator)
         wait.until(v)
         return func(*args, **kwargs)
+
     return wrapper
 
 
@@ -36,7 +38,7 @@ def click_element(locator):
 
 
 @wait
-def enter_text(locator, * , value):
+def enter_text(locator, *, value):
     driver.find_element(*locator).clear()
     driver.find_element(*locator).send_keys(value)
 
@@ -66,6 +68,3 @@ enter_text(("id", "Email"), value="hello.world@company.com")
 enter_text(("id", "Password"), value="Password123")
 enter_text(("id", "ConfirmPassword"), value="Password123")
 click_element(("id", "register-button"))
-driver.close
-
-
