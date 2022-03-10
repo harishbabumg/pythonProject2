@@ -7,7 +7,7 @@ from selenium.common.exceptions import NoSuchElementException
 # #
 driver = webdriver.Chrome("./chromedriver")
 # keys = "Consequence Parrot Watch ಕಲೆ gksvckhgac horse cat hvcjksv book kangaroo"
-keys = "Consequence kjd Consequence Parrot Watch ಕಲೆ gksvckhgac horse cat hvcjksv book kangaroo"
+keys = "Consequence carnivores"
 text = keys.split(" ")
 dd = {}
 # lst = []
@@ -26,11 +26,11 @@ for char in text:
         dd[char] = "Meaning not found"
 
 
-# print(dd)
+print(dd)
 
 
-for pair in dd:
-    a = pair
-    b = dd[pair]
-    print(a, "--->", b)
+# for pair in dd:
+#     a = pair
+#     b = dd[pair]
+#     print(a, "--->", b)
 
