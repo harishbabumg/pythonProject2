@@ -16,7 +16,7 @@ for char in text:
     driver.get("http://www.google.com")
     driver.get("https://www.shabdkosh.com/dictionary/english-kannada/")
     driver.find_element_by_id("e").send_keys(char)
-    driver.find_element_by_xpath("//button[text() = 'Search']").click()
+    driver.find_element_by_xpath("//button[@class='search-submit btn btn-primary px-3']").click()
     try:
         if driver.find_element_by_xpath("//ol[@class=' eirol']/../.."):
             res = driver.find_element_by_xpath("//ol[@class=' eirol']/../..").text
@@ -29,8 +29,8 @@ for char in text:
 print(dd)
 
 
-# for pair in dd:
-#     a = pair
-#     b = dd[pair]
-#     print(a, "--->", b)
+for pair in dd:
+    a = pair
+    b = dd[pair]
+    print(a, "--->", b)
 

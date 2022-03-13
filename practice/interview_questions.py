@@ -248,3 +248,5 @@ path = r"C:\Users\haris\PycharmProjects\pythonProject2\files_directory\txt_log_f
 # for word in words:
 #     d[word[0]].append(word)
 # print(d)
+
+
