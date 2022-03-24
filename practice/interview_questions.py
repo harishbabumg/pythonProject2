@@ -526,7 +526,7 @@ without using reverse function."""
 # func("TRACXN", 1)
 
 """36 Sum all the numbers in the below string."""
-s = "Sony12India567Pvt2ltd"
+# s = "Sony12India567Pvt2ltd"
 
 # total = 0.00
 # r = re.findall(r'[\d]',s)
@@ -583,7 +583,7 @@ s = "Sony12India567Pvt2ltd"
 # print(res)
 """39 Program to print the number of occurrences of 
 characters in a String without using inbuilt functions."""
-s = 'helloworld'
+# s = 'helloworld'
 # d = defaultdict(int)
 # for char in s:
 #     d[char] += 1
@@ -643,7 +643,7 @@ and build a new list, only if the items of the list has even number of character
 
 """45 Write a program to iterate through list and build a new dictionary, 
 only if the items of the list has even number of characters."""
-names = ['apple', 'yahoo', 'google', 'gmail', 'walmart', 'flipkart', 'facebook', 'amazon']
+# names = ['apple', 'yahoo', 'google', 'gmail', 'walmart', 'flipkart', 'facebook', 'amazon']
 
 # new_dict = {ele: len(ele) for ele in names if len(ele) % 2 == 0}
 # print(new_dict)

@@ -128,3 +128,8 @@ from collections import defaultdict
 #
 # fib(6)
 
+def rec(n):
+    for _ in range(0, n):
+
+
+print(rec(1))
