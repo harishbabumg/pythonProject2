@@ -7,8 +7,11 @@ from selenium import webdriver
 from selenium.webdriver.support.expected_conditions import visibility_of_element_located
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.action_chains import ActionChains
-
+from pytest import fixture
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
+import xlrd
+
 # driver = webdriver.Chrome("./chromedriver")
 # driver.get("https://www.google.co.in/")
 
@@ -608,3 +611,451 @@ MOUSE ACTIONS
 # target_element = driver.find_element_by_xpath("//input[@class='gLFyf gsfi']")
 # actions = ActionChains(driver)
 # actions.drag_and_drop(source_element, target_element).perform()
+
+"""
+MULTIPLE WINDOWS
+window_handles
+    Each window has a unique identifier which remains persistent in a single session. (alpha Numeric ID)
+    You can get the window handles of all the windows using window_handles.
+    window handle at 0th index of the list will always be the window handle of parent window.
+    When a new window/tab opens, the driver control will be present on parent window. To work with new
+    window, you will need to switch to it.
+    NoSuchWindow Exception if we are working on a wrong window without switching to correct to window.
+"""
+# from selenium import webdriver
+# from time import sleep
+#
+# driver = webdriver.Chrome("./chromedriver")
+# driver.get("http://demowebshop.tricentis.com")
+# driver.maximize_window()
+# driver.find_element_by_xpath("//a[text()='Twitter']").click()
+# sleep(5)
+# handles = driver.window_handles
+# driver.switch_to.window(handles[1])
+# sleep(2)
+# driver.find_element_by_xpath("//input[@placeholder='Search Twitter']").send_keys("RRR")
+# driver.switch_to.window(handles[0])
+# driver.find_element_by_xpath("//a[text()='Register']").click()
+
+# for monsterindia.com
+
+# from selenium import webdriver
+# from time import sleep
+#
+# driver = webdriver.Chrome("./chromedriver")
+# sleep(1)
+# driver.maximize_window()
+# sleep(1)
+# driver.get("https://www.monsterindia.com")
+# sleep(2)
+# # driver.switch_to.alert.dimiss()
+# sleep(2)
+# driver.find_element_by_id("wzrk-cancel").click()
+# sleep(2)
+# driver.find_element_by_id("SE_home_autocomplete").send_keys("Python")
+# sleep(2)
+# driver.find_element_by_xpath("//input[@value='Search']").click()
+# sleep(2)
+# driver.find_element_by_xpath("//div[@class='job-tittle'][1]").click()
+# sleep(2)
+# handles = driver.window_handles
+# driver.switch_to.window(handles[1])
+# driver.find_element_by_xpath("//button[@class='line-btn btn-apply btn-apply-only '][1] ").click()
+
+"""
+JAVASCRIPT ALERT
+    An Alert shows a custom
+    message, and a single button
+    which dismisses the alert,
+    labelled in most browsers as
+    OK.
+    WebDriver can get the text
+    from the popup and accept or
+    dismiss these alerts.
+"""
+# JAVA SCRIPT ALERT
+
+# from selenium import webdriver
+# from time import sleep
+#
+# driver = webdriver.Chrome("./chromedriver")
+# driver.get("http://demowebshop.tricentis.com")
+# driver.maximize_window()
+# sleep(3)
+# driver.find_element_by_xpath("//input[@value='Search']").click()
+# sleep(3)
+# print(driver.switch_to.alert.text)
+# sleep(3)
+# driver.switch_to.alert.accept()
+
+"""
+FILE UPLOAD
+    As soon the “Upload CV”
+    button is clicked, file explorer
+    window/popup will be opened,
+    asking us to browse the CV to
+    upload.
+    we can handle the file
+    browse/explorer popup using
+    third party library like PyAutoIT.
+    Instead of using the third party
+    library to handle this popup,
+    we can directly use “send_keys”
+    method on the control which has
+    “file” as value of the attribute
+    ”type”
+"""
+
+# Not working doubt
+
+# from selenium import webdriver
+# from time import sleep
+# driver = webdriver.Chrome("./chromedriver")
+# driver.maximize_window()
+# driver.get("http://naukri.com")
+# driver.find_element_by_xpath("//div[text()='Jobs']").click()
+
+# opts = webdriver.ChromeOptions()
+# opts.add_experimental_option("prefs", {"download.default_directory": r"C:\Users\haris\OneDrive\Desktop\python_class\New folder", "safebrowsing.enabled":True})
+# driver = webdriver.Chrome('./chromedriver', options=True)
+# driver.get("https://www.whatsapp.com/download/")
+# sleep(5)
+# driver.find_element_by_xpath("//a[text()='DOWNLOAD FOR WINDOWS']").click()
+
+"""
+Authentication
+    when we launch the url which
+    asks for authentication,
+    authentication popup will be
+    displayed, asking user to
+    authenticate.
+    We can programmatically avoid
+    this popup by directly passing
+    the username and
+    password in the url itself as
+    shown in the code.
+"""
+# from selenium import webdriver
+# driver = webdriver.Chrome('./chromedriver')
+# driver.maximize_window()
+# sleep(3)
+# # driver.get("https://the-internet.herokuapp.com/basic_auth")
+# driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth")  # admin:admin = username:password
+
+"""
+Model window or hidden division popup
+    Hidden division pop is a dialog or
+    overlay which is initially hidden, but
+    will be popped up only the user performs
+    some actions like click or on- page load
+    etc.
+    This is not JavaScript popup
+    We can inspect the overlay
+    When hidden division pop is opened,
+    pop takes the focus from the
+    application.
+    When pop up is closed, focus
+    automatically goes to the application.
+"""
+
+"""
+CALENDAR POPUP
+"""
+
+# from selenium import webdriver
+# from time import sleep
+# from selenium.common.exceptions import NoSuchElementException
+#
+#
+# driver = webdriver.Chrome("./chromedriver")
+# driver.maximize_window()
+# driver.get("https://www.goibibo.com/")
+# driver.find_element_by_xpath("//span[text()='Departure']").click()
+# # sleep(0)
+# _month = 'March 2023'
+# _day = 28
+# for _ in range(12):
+#     try:
+#         driver.find_element_by_xpath(f"// div[text() = '{_month}']")
+#         # sleep(0)
+#         break
+#     except NoSuchElementException:
+#         driver.find_element_by_xpath("//span[@aria-label='Next Month']").click()
+#         # sleep(0)
+#         continue
+# try:
+#     driver.find_element_by_xpath(f"//div[contains(@aria-label, 'Mar {_day} 2023')]").click()
+# except NoSuchElementException:
+#     print("invalid Date provided")
+
+"""
+IFRAMES
+    An iFrame (Inline Frame) is an HTML document embedded inside the current HTML
+    document or a website
+    iFrame is defined by an <iFrame></iFrame> tag in HTML. With this tag you can identify an
+    iFrame while inspecting the HTML tree
+    Webdriver can’t perform an action on web element automatically when object or web
+    element are inside the frame
+    In order to work with frame web elements we should pass driver control to the frame before
+    performing an action
+"""
+from selenium import webdriver
+
+# switching frame using name/id
+# driver = webdriver.Chrome('./chromedriver')
+# driver.switch_to.frame('buttonframe')
+# driver.find_element_by_id("search").click()
+
+# switching frame by index
+# iframe = driver.find_element_by_tag_name('iframe')[1]
+# driver.switch_to.frame(iframe)
+
+# switching frame using webelement
+# iframe = driver.find_element_by_xpath("//iframe[@id='buttonframe']")
+# driver.switch_to.frame(iframe)
+# driver.find_element_by_xpath("//button[@text=done]")
+
+# coming out of the frame
+# driver.switch_to.default_content()
+
+"""
+COMMON EXCEPTIONS
+NoSuchElementException
+    This exception is raised when the element is not found in DOM
+    The exception is raised by find_element method
+StaleElementReferenceException
+    Thrown when a reference to an element is now "stale" or Lost
+    The possible cause for this exception is that you are no longer on the same page, or the page may
+    have refreshed since the element was located
+    The element may have been removed and re-added to the web page, since it was located
+    Element may have been inside an iframe or another context which was refreshed
+NoSuchAttributeException
+    Thrown when the attribute of element could not be found
+    An attribute could be anything that you are trying to access after dot operator. It can be a method,
+    property, variable etc.
+NoAlertPresentException
+    Thrown when switching to no presented alert
+    This can be caused by calling an operation on the Alert() class when an alert is not yet on the screen
+UnexpectedTagNameException
+    Thrown when you try to create an instance of Select class by passing a webelement where the HTML
+    tag is other than <select>
+ElementNotVisibleException
+    Thrown when an element is present on the DOM, but it is not visible
+    Most commonly encountered when trying to click or edit or read text of an element that is hidden
+    from view
+ElementNotInteractableException
+    Thrown when an element is present on the DOM but can not interaction with the element
+    Possible cause may be the element is disabled
+TimeoutException
+    Usually thrown by until method of WebDriverWait class
+    Possible cause would be when the command does not complete with in specified timeout period
+NoSuchFrameException
+    Thrown when frame target to be switched doesn't exist
+"""
+
+"""
+PYTEST
+UNIT TESTING
+    A unit test is a way of testing a unit - the smallest piece of code that can be logically isolated in
+    a system. In most programming languages, that is a function, a subroutine, a method or
+    property.
+   
+    A unit can be almost anything you want it to be -- a line of code, a method, or a class. Generally
+    though, smaller is better.
+    Smaller tests give you a much more granular view of how your code is performing.
+    There is also the practical aspect that when you test very small units, your tests can be run fast;
+    like a thousand tests in a second fast.
+
+PYTEST
+    The pytest framework makes it easy to write small tests using Python.
+    advantages:
+        run tests in parallel.
+        easy to start with because of its simple and easy syntax.
+        run a specific test or a subset of tests.
+        Grouping of test methods
+        Generates report
+    test discovery
+         module name should either start with test_* or *_test.
+         All the classes inside the module should start from Test* (without an init method)
+         All the test methods should start from test_*.
+    pytest fixtures
+        Pytest fixture is a callable (normally a function or a generator) decorated with inbuilt pytest decorator
+        @fixture
+        Fixtures are used for dependency injection or to pass the data to the test functions
+        Fixtures are accessed by test functions by passing the name of the fixture to test functions as argument.
+        Fixtures are used to run a piece of code repeatedly before and/or after every test
+        method/class/module/session based on the defined scope.
+        
+        Advantages of fixtures
+            test can be run independently irrespective of previous test method is failed or passed
+            
+"""
+
+
+from pytest import fixture
+
+# @fixture
+# def greet():
+#     return "hello world"
+
+# PASSING FIXTURE AS AN ARGUMENT TO TEST FUNCTION
+# def test_greet(greet):
+#     assert "hello world" == greet
+
+# @fixture
+# def _driver():
+#     driver = webdriver.Chrome("chromedriver")
+#     driver.get("https://google")
+#     return driver
+
+# PASSING FIXTURE AS AN ARGUMENT TO TEST FUNCTION
+# def test_login(_driver):
+#     _driver.find_element_by_xpath("//a[text()='Login']")
+#     -_driver.find_element_by_id("Email").send_keys("hb@gmail.com")
+#     _driver.find_element_by_id("Password").send_keys("123@abc")
+#     _driver.quit()
+
+"""
+SETUP AND TEARDOWN METHOD USING FIXTURES
+    statements before yield keyword run’s once before every test function and statements after
+    yield keyword run’s once after every test function. Thus fixture acting as
+    setup and tear down method.
+"""
+# from selenium import webdriver
+# from pytest import fixture
+
+@fixture
+# def _driver():
+#     print("Launching Browser")
+#     driver = webdriver.Chrome("./chromedriver")
+#     driver.get("hhtps://demowebshop.tricentis.com/")
+#     yield driver # passing driver instance to test method
+#     print("Closing the browser")
+#     driver.quit()
+#
+# def test_login(_driver):
+#     _driver.find_element_by_xpath("//a[text()='Log in']").click()
+#     _driver.find_element_by_id("Email").send_keys("hb@gmail.com")
+#     _driver.find_element_by_id("Password").send_keys("123@abc")
+
+
+# """
+#     conftest.py (sharing fixtures)
+#     Fixtures can be shared or re-used in different test methods and across multiple files through a special
+#     python file “conftest.py”
+#     The advantage of having the fixture in “conftest.py” is that you don’t have to import the fixture
+#     you want to use in each and every test. The fixture present in “conftest.py” automatically get
+#     discovered by pytest.
+#     Both conftest.py and the test module should be in the same package! If conftest.py is in other
+#     package than the test module, then conftest.py module will not be automatically discovered.
+#     The discovery of fixture functions starts at test classes, then test modules, then conftest.py files.
+#
+#     scoping of fixtures
+#         "function" Called once per test function (default)
+#         "module" Called once per module
+#         "class" Called once per class
+#         "session" Called once per-run
+#
+# """
+# @fixture(scope="session")
+# def fix_session():
+#     print("\n running setup SESSION scope")
+#     yield
+#     print('\n running teardown SESSION scope')
+#
+#
+# @fixture(scope="module")
+# def fix_mod():
+#     print("\n running setup MODULE scope")
+#     yield
+#     print('\n running teardown MODULE scope')
+#
+# @fixture(scope="class")
+# def fix_cls():
+#     print("\n running setup CLASS scope")
+#     yield
+#     print('\n running teardown CLASS scope')
+#
+# @fixture(scope="function")
+# def fix_func():
+#     print("\n running setup FUNCTION scope")
+#     yield
+#     print('\n running teardown FUNCTION scope')
+
+# """
+# test dependency
+#     In order make one test method to depend on the test result
+#     of another test method, we need to install a
+#     plugin pytest-dependency
+#     It allows to mark some tests as dependent from other tests.
+#     These tests will then be skipped if any of the
+#     dependencies did fail or has been skipped.
+#
+#     Both the tests are decorated with
+#     mark.dependency()
+#
+# GROUPING TESTS
+#     You can group the tests in using ”mark” decorator. You can provide any meaning full group name.
+#     In the above example, we have two groups, “smoke” and “regression"
+#
+#     ex: Executes on those test functions marked as ”SMOKE”
+#         Executes on those test functions marked as ”REGRESSION”
+#
+# GENERATING REPORTS
+#     To Generate test results in html format, we need
+#     to install a plugin pytest-html
+# """
+
+# """READING EXCEL"""
+# import xlrd
+#
+#
+# def read_locators(sheetname):
+#     workbook = xlrd.open_workbook(r"C:\Users\haris\OneDrive\Desktop\book1.xlsx")
+#     worksheet = workbook.sheet_by_name(sheetname)
+#     rows = worksheet.get_rows()
+#     header = next(rows)
+#     return {row[0].value:(row[1].value, row[2]) for row in rows}
+#
+#
+# print(read_locators("LoginPage"))
+
+# """Login page POM class""" # not working doubt
+# class LoginPage:
+#     def __init__(self, driver):
+#         self.driver = _driver
+#
+#     loginpage = read_locators("LoginPage")
+#
+#     def enter_email(self, email):
+#         self.enter_email(self.loginpage["txt_email"], value=email)
+#
+#     def enter_password(self, password):
+#         self.enter_password(self.loginpage["txt_password"], value=password)
+#
+#     def click_login(self):
+#         self.click_login(self.loginpage["btn_login"])
+
+"""
+PAGE OBJECT MODEL
+    Design patterns are formalized best practices that the programmer can use to solve common
+    problems when developing/testing an application or system.
+    Page Object is a Design Pattern which has become popular in test automation for enhancing
+    test maintenance and reducing code duplication.
+    
+    Problems without POM
+        AUT’s (Application Under Test) UI changes its
+        identifiers, or layout, or if the login
+        flow is changed, the test itself must
+        changed to reflect the change in login
+        flow.
+        The ID attribute would be spread in
+        multiple tests, in all tests that had
+        to use this login page. If the value of the
+        ID attribute changes, ID attribute needs
+        to be changed in all the scripts.
+
+        
+
+
+"""
