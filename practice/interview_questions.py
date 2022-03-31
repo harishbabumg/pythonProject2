@@ -797,3 +797,502 @@ first the key needs to be created and initialised.
 """
 
 """56 Explain property decorator in python."""
+"""57 What is Mutable and Immutable datatypes."""
+
+"""58 Explain get() method in dictionaries.
+point =  {'a': 1, 'b': 2}
+1. Values of dictionary can be accessed in two different ways. using square bracket syntax and the other one is using get() method.
+2. When we try to access a key of a dictionary which does not exist using square bracket syntax (point['c']), "KeyError" exception is raised.
+3. When we try to access a key of a dictionary which does not exist using get() method (point.get('c')), None is returned and no exception is raised.
+4. We can pass a positional argument to get() method as custom message, so that get() method returns the custom message if the key does not exist.
+           e.g. profile.get('c', 'Sorry the key does not exist')
+"""
+"""59 Write a list comprehension to get a list of even numbers from 1-50"""
+# list_ = [num  for num in range(1, 51) if num % 2 == 0]
+# print(list_, end="")
+
+"""60 Find the longest non-repeated substring in the below string"""
+s = "This is a Programming language and Programming is fun"
+# s1 = s.split()
+# s2 = sorted(s1, key=len)
+# print(s2)
+#
+# # for item in sorted(s.split(), key=len):
+# for item in s2:
+#     if s2.count(s2[-1]) > 1:
+#         del s2[-1]
+#     else:
+#         print(s2[-1])
+#         break
+
+# d = { word: len(word) for word in s.split() if s.count(word) == 1}
+# Sort the dictionary based on values and get the last item
+# print(sorted(d.items(), key=lambda item: item[-1])[-1])
+
+"""62 Write a program to count the number of occurrences of each item in 
+the list without using any inbuilt functions"""
+
+# names = ['apple', 'google', 'apple', 'yahoo', 'google', 'facebook', 'gmail', 'yahoo']
+# d = {}
+# unique_items = set(names)
+# for item in unique_items:
+#     _count = 0
+#     for name in names:
+#         if item == name:
+#             _count += 1
+#     d[item] = _count
+# print(d)
+
+"""63 Write a function to check if the number is Prime"""
+# def prime(n):
+#
+#     for num in range(2, n):
+#         if n % num == 0:
+#             print("it's not prime num")
+#             # sys.exit()
+#             break
+#         else:
+#             print("it's prime")
+#             # sys.exit()
+#             break
+#
+#
+# prime(7)
+
+"""64 How to create a tuple using range function"""
+# a = tuple(range(0, 5))
+# print(a)
+
+"""65 Write a program to find the largest number in the list without using any inbuilt functions"""
+# numbers = [10, 20, 30, 40, 50]
+
+# print((sorted(numbers))[-1])
+
+# largest = 0
+# for item in numbers:
+# 	if item > largest:
+# 		largest = item
+# print(largest)
+
+"""66 Write a method that returns the last digit of an integer. 
+For example, the call of get_last_digit(3572) should return 2."""
+
+# i = 33572
+# print(i%10)
+# print(str(i)[-1])
+
+"""67 Write a program to find most common words in a given list."""
+words = [
+'look', 'into', 'my', 'eyes', 'look', 'into', 'my', 'eyes',
+'the', 'eyes', 'the', 'eyes', 'the', 'eyes', 'not', 'around', 'the', 'eyes', "don't", 'look', 'around', 'the',
+'eyes', 'look', 'into','my', 'eyes', "you're", 'under'
+]
+
+# from collections import Counter
+# c = Counter(words)
+# print(c)
+# print(c.most_common())
+
+
+# d = {}
+# for word in words:
+#     d[word] = words.count(word)
+# print(d)
+# s = sorted(d.items(), key= lambda item: item[-1])
+
+"""68 Make a function named tail that takes a sequence (like a list, string, or tuple) 
+and a number n and returns the last n elements from the given sequence, as a list."""
+
+# def tail(coll, n):
+#     print(coll[-3::])
+#
+# a = [1, 2, 3, 4, 5]
+#
+# tail(a, -3)
+
+"""69 Write function named is_perfect_square that accepts a number and 
+returns True if it's a perfect square and False if it's not."""
+
+# def is_perfect_square(n, power):
+#     if str(n ** (1/power))[-1] == "0":
+#         print(f"{n} is a Perfect_Square")
+#     else:
+#         print(f"{n} is not a Perfect_Square")
+#
+# is_perfect_square(121, 2)
+
+"""70 Write a program to get all the duplicate items and 
+the number of times the item is repeated in the list."""
+# names = ['apple', 'google', 'apple', 'yahoo', 'yahoo', 'facebook',
+#          'apple', 'gmail', 'gmail', 'gmail', 'gmail']
+# unique_s = set(names)
+# d = {}
+# for item in names:
+#     if names.count(item) > 1:
+#         d[item] = names.count(item)
+# print(d)
+#
+# dd = { name: names.count(name) for name in unique_s if names.count(name) > 1}
+# print(dd)
+"""71 Write a program to count the number of occurrences of each word in a file."""
+
+# path = r"C:\Users\haris\PycharmProjects\pythonProject2\practice\files_in_Python\line.txt"
+#
+# with open(path, "r") as file:
+#     # e = file.readlines()
+#     file.seek(0,0)
+#     d = file.read().split()
+# di = {}
+# for item in d:
+#     di[item] = d.count(item)
+# print(di)
+
+"""72 Write a program to count the number of occurrences of vowels in a file."""
+
+# path = r"C:\Users\haris\PycharmProjects\pythonProject2\practice\files_in_Python\line.txt"
+# with open(path, "r") as f:
+#     e = f.read().split()
+# vowels = 0
+# for item in e:
+# # vowels = 0
+#     if item[0].lower() in "aeiou":
+#         vowels += 1
+# print(vowels)
+
+"""73 Write a program to print all numeric values in a list"""
+# items = ['apple', 1.2, 'google', '12.6', 26, '100']
+#
+# for ele in items:
+#     if isinstance(ele, (int, bool, float, complex)):
+#         print(ele, end=" ")
+
+"""74 Triangle Patterns"""
+# x = 1
+# for n in range(1, 6):
+#     print("* " * n)
+#     # print("* " * x)
+#     x += 1
+
+# Left Justified Triangle
+# for i in range(1, 6):
+#     print(f"{'*'*i:<5}")
+
+# Right Justified Triangle
+# x = 8
+# y = 1
+# for n in range(1, 6):
+#     print((" ")*x + (" *")*y)
+#     x -= 2
+#     y += 1
+
+# for i in range(1, 6):
+#     print(f"{'*'*i:>5}")
+
+# Equilateral Triangle
+# x = 8
+# y = 1
+# for n in range(1, 6):
+#     print((" " * x) + (" *  " * y))
+#     x -= 2
+#     y += 1
+# Equilateral Triangle
+# for i in range(1, 6):
+#     print(f"{'* '*i:^10}")
+
+# Inverted Triangles (Left Justified)
+
+# x = 5
+# y = 1
+# for n in range(1, 6):
+#     print(("* " * x))
+#     x -= 1
+
+# for i in range(6, 0, -1):
+#     print(f"{'*'*i:<6}")
+
+# Inverted Triangles (Right Justified)
+# x = 1
+# y = 5
+# for n in range(1, 6):
+#     print((" " * x)+("* "*y))
+#     x +=2
+#     y -=1
+
+# for i in range(6, 0, -1):
+#     print(f"{'*'*i:>12}")
+
+
+# Inverted Triangles (Centre)
+# x = 5
+# y = 0
+#
+# for n in range(1, 6):
+#     print((" "* y) + ("* "*x))
+#     x -= 1
+#     y += 1
+
+# for i in range(6, 0, -1):
+#     print(f"{'* '*i:^12}")
+
+# Number Pattern in triangle (Left Justified)
+
+# x = range(1, 6)
+# li = []
+# for n in list(range(1, 6)):
+#     li.append(str(n))
+# # print(li)
+#
+# for n in range(1, 6):
+#     print("".join(li[0:n]))
+
+# pat = ''
+# for i in range(1, 6):
+#     pat += str(i)
+#     print(f'{pat:<5}')
+
+
+# Number Pattern in triangle (Right Justified)
+# x = 5
+# li = []
+# for n in list(range(1, 6)):
+#     li.append(str(n))
+# print(li)
+
+# x = 5
+# for n in range(1, 6):
+#     print(" " * x+"".join(li[0:n]))
+#     x -= 1
+
+###
+# for i in range(1, 6):
+#     pat += str(i)
+#     print(f'{pat:>5}')
+
+
+# Number Pattern in triangle (Centre)
+# li = []
+# for n in range(1,6):
+#     li.append(str(n))
+# x = 5
+# for n in range(1, 6):
+#     xa = (" ".join(li[0:n]))
+#     print(" " * x + str(xa) + " " * x)
+#     x -=1
+
+"""75 Write a program count the occurrence of a particular word in the file"""
+
+# path = r"C:\Users\haris\PycharmProjects\pythonProject2\files_directory\txt_log_files\reading_files\sample.txt"
+# import re
+# with open(path, "r") as f:
+#     a = f.read().split()
+#     # print(a)
+# lst = []
+# for item in a:
+#     try:
+#         if type(int(item)) == int:
+#             pass
+#     except (TypeError, ValueError):
+#         lst.append(item)
+# # print(lst)
+# d = {}
+# for ele in lst:
+#     d[ele] = lst.count(ele)
+# print(sorted(d.items(), key= lambda value: value[-1], reverse=True ))
+
+"""76 Write a program to map a product to a company and build a dictionary with company and 
+list of products pair"""
+# all_products = ['iPhone', 'Mac', 'Gmail', 'Maps', 'iWatch', 'Windows',
+#                 'iOS', 'Google Drive', 'One Drive']
+#
+# apple_products = {'iPhone', 'Mac', 'iWatch'}
+# google_products = {'Gmail', 'Maps', 'Google Drive'}
+# msft_products = {'Windows', 'One Drive'}
+#
+# # method HB
+#
+# dd = defaultdict(list)
+# la = []
+# lg = []
+# ms = []
+# for item in all_products:
+#     if item in apple_products:
+#         # la.append(item)
+#         # dd["apple"] = la
+#         dd["apple"].append(item)
+#     elif item in google_products:
+#         lg.append(item)
+#         dd["google"] = lg
+#     elif item in msft_products:
+#         ms.append(item)
+#         dd["ms"] = ms
+# print(dd)
+#
+# # class
+# d = defaultdict(list)
+# for product in all_products:
+#       if product in apple_products:
+#          d['Apple Inc'].append(product)
+#       elif product in google_products:
+#          d['Google'].append(product)
+#       elif product in msft_products:
+#          d['Microsoft'].append(product)
+
+"""77 Write a program to rotate items of the list"""
+# names = ["apple", "google", "yahoo", "gmail", "facebook", "flipkart", "amazon"]
+
+# li=[]
+# for _ in range(0, 1):
+#     b = names[-1]
+#     li.append(b)
+#     a = names[0:-1]
+#     li.extend(a)
+# print(li)
+
+# def rotate(iterable, n):
+#     for _ in range(n):
+#         f = iterable.pop()
+#         iterable.insert(0, f)
+#     return iterable
+
+# a = names.pop()
+# print(names)
+# print(names.insert(0, a))
+# print(names)
+
+"""78 Write a program to rotate characters in a string
+"""
+s = "helloworld"
+
+# METHOD HB
+# def rev_str(string):
+#     li=[]
+#     for _ in string:
+#         li.append(_)
+#     # print(li)
+#     a = li.pop()
+#     li.insert(0, a)
+#     fin = "".join(li)
+#     print(fin)
+#
+# rev_str("HBBB")
+
+# def rotate_string(string, n):
+#     string = list(string)
+#     for _ in range(n):
+#         f = string.pop()
+#         string.insert(0, f)
+#     return ''.join(string)
+
+"""words"""
+# sentence = "Hello world welcome to python"
+# words = sentence.split()
+#
+#
+# def rotate(iterable, n):
+#     for _ in range(n):
+#         f = iterable.pop()
+#         iterable.insert(0, f)
+#     return ' '.join(iterable)
+# print(rotate(words, 1))
+
+"""79 Write a program to count the number of white spaces in a given string"""
+sentence = "Hello world welcome to Python Hi  How are you. Hi how are you"
+
+# import re
+# s= re.findall(r"\s", sentence)
+# print(len(s))
+
+"""80 Write a program to print only non-repeated characters in a string"""
+# s = 'helloworld'
+# li = list(s)
+# for item in li:
+#     if li.count(item) == 1:
+#         print(item, end="")
+# print()
+#
+# r = [ c for c in s if s.count(c) == 1]
+# print("".join(r))
+
+"""81 What is the difference between a list and a tuple"""
+"""1. The main difference between a list and a tuple is that list's are mutable and tuples are immutable.
+2. Python over allocates memory for lists. The reason for over allocation of memory is to support append operation. 
+Where as in tuples, memory is not over allocated, as tuples does not support append operation. 
+(Since tuples are immutable, it does not support append operation). 
+3. Tuples are more memory efficient than lists. (because in tuples no extra memory is allocated. It is fixed).
+4. Tuples are negligibly faster than lists. """
+
+"""82 Write a program to print all the consonants in a given string"""
+# s = "Hello world"
+# for _ in s:
+#     if _.lower() not in "aeiou":
+#         print(_, end="")
+# print()
+# d = [_ for _ in s if _.lower() not in "aeiou"]
+# print("".join(d))
+
+"83 Write a program to count the number of commented lines in a text file"
+# f = open(path, "r")
+# count = 0
+# # print(f.readlines())
+# for line in f.readlines():
+#     if line[0] == "#":
+#     # if line.startswith("#"):
+#         count+=1
+# print(count)
+
+"""84 Write a program to check if the year is leap year or not"""
+# import calendar
+# print(calendar.isleap(2023))
+
+"""85 Liner Search"""
+# def sea(a, key):
+#     if key in a:
+#         print(True)
+#     else:
+#         print(False)
+# a =range(0, 101)
+# sea(a, 45)
+
+"""86 Difference between xrange and range"""
+"""
+python2- xrange
+python3- range
+
+1. xrange does not stop, start and step attributes. 
+    But range object has start, stop and step attributes.
+2. range Object supports slicing! But xrange does not support slicing
+3. range object has __contains__ method implemented. So it supports membership testing. 
+   But xrange does not implement __contains__ method. 
+   (So if you are searching for a number in range is faster than xrange)
+4. range will accept integer of any size. 
+"""
+
+"""87 Write a program to count no of capital letters in a string"""
+# s = "HjHYjHJjkJKkkjHHjJjJj"
+# count=0
+# for _ in s:
+#     if _.isupper():
+#         count+=1
+# print(count)
+
+# sentence = "Hi How are You WelCome to PytHon"
+# words = sentence.split()
+# dd = defaultdict(int)
+#
+# for _ in sentence:
+#     if _.isupper():
+#         dd[_]+=1
+# print(dd)
+
+# print
+"""88 Write a program to get the below outpu"""
+# x = 2
+# for i in range(0, 5):
+#     print("*")
+#     print("* " * x)
+#     x +=1
+#
+# for i in range(1, 5):
+#       print('* '*1)
+#       j = i + 1
+#       print('* '*j)

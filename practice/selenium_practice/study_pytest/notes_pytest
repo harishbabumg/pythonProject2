@@ -1,0 +1,79 @@
+Pytest assertions are checks that return either True or False status.
+    In Python Pytest, if an assertion fails in a test method, then that method execution is stopped there.
+    The remaining code in that test method is not executed, and
+    Pytest assertions will continue with the next test method.
+By default pytest only identifies the file names
+    starting with test_ or ending with _test as the test files.
+    We can explicitly mention other filenames though
+Pytest requires the test method names to start with “test.”
+    All other method names will be ignored even if we explicitly ask to run those methods.
+
+py.test
+    "py.test" command will run all the test files in that folder and subfolders.
+    To run a specific file, we can use the command py.test <filename>
+
+Run a subset of Entire Test with PyTest
+    Grouping of test names by substring matching
+        py.test -k method1 -v
+            -k <expression> is used to represent the substring to match
+            -v increases the verbosity
+    Grouping of tests by markers
+        Pytest allows us to set various attributes for the test methods using pytest markers,
+        @pytest.mark . To use markers in the test file, we need to import pytest on the test files.
+
+        Here we will apply different marker names to test methods and run specific tests
+        based on marker names. We can define the markers on each test names by using
+        Ex. @pytest.mark.<name>
+
+        can run the marked test by:
+            py.test -m <name>
+            -m <name> mentions the marker name
+Run Tests in Parallel with Pytest
+    Usually, a test suite will have multiple test files and hundreds of test methods
+    which will take a considerable amount of time to execute.
+    Pytest allows us to run tests in parallel.
+
+    For that we need to first install pytest-xdist by running
+        py.test -n 4
+        -n <num> runs the tests by using multiple workers.
+        In the above command, there will be 4 workers to run the test.
+
+Pytest Fixtures
+
+    conftest.py – have a fixture which will supply base url for all the test methods
+
+    Fixtures are used when we want to run some code before every test method.
+    So instead of repeating the same code in every test we define fixtures.
+    Usually, fixtures are used to initialize database connections, pass the base , etc
+    A method is marked as a Pytest fixture by marking with @fixture
+    The fixture method has a scope only within that test file it is defined.
+    If we try to access the fixture in some other test file , we will get an error saying fixture
+    ‘supply_AA_BB_CC’ not found for the test methods in other files.
+    To use the same fixture against multiple test files,
+    we will create fixture methods in a file called conftest.py.
+
+    pytest will look for the fixture in the test file first and if not found
+    it will look in the conftest.py
+
+Pytest Parameterized Test
+    The purpose of parameterizing a test is to run a test against multiple sets of arguments.
+    We can do this by @pytest.mark.parametrize.
+        Ex.
+            def test_add(input1, input2, output):
+	            assert input1+input2 == output,"failed"
+
+
+Pytest Xfail / Skip Tests
+    There will be some situations where we don’t want to execute a test, or
+    a test case is not relevant for a particular time. In those situations,
+    we have the option to Xfail the test or skip the tests
+
+    The xfailed test will be executed, but it will not be counted as part failed or passed tests.
+    There will be no traceback displayed if that test fails. We can xfail tests using
+    @pytest.mark.xfail.
+
+    Skipping a test means that the test will not be executed. We can skip tests usin
+    @pytest.mark.skip.
+
+Results XML
+    The result.xml will record the test execution result.

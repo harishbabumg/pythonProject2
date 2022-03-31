@@ -1,0 +1,39 @@
+A class is a model or plan to create objects. The objects of a class are also called instances.
+A class can contains attributes which are nothing but variables.
+A class can contains methods which are useful to process variables.
+A method is a function that is written inside a class.
+The object class is the base class from where all other classes are derived.
+To use a class, generally we should create an instance. To create an instance of a class, we can write,
+    instance_name = Classname()
+A constructor is special method that is useful to declare and initialize the instance variables.The general
+    format of the constructor is:
+    def __init__(self, parameters):
+A constructor is called only once at the time of creating an instance or object.
+"self" is a variable that contains by default the memory address of the instance.
+    We need not pass anything to this variables.
+The self variable becomes the first parameter for constructor and instance methods.
+Instance variables are the variables whose separate copy is created in every instance (or object).
+    Instance variables are referenced as instance_name.variable_name
+A namespace represents a memory block where names are mapped (or linked) to objects.
+    A class will have class namespace and an instance will its own namespace called instance namespace.
+The variables in the class namespace are referenced as classname.variable_name. The variables in
+    the instance namespace are referenced as instancename.variable_name.
+Instance methods are the methods which act upon the the instance variables of the class.
+    Instance methods are bound to instances (or objects). Hence they are called instance_name.method()
+Instance methods use 'self' as first default parameter.
+Instance methods are again classified as accessor methods and mutator methods.
+    Accessor(getter) access or read the instance variables, whereas mutator(setter) methods not only read the
+    instance variables but also modify them.
+Accessor methods are writter in getXXX() and hence they are called getter methods. Mutator methods
+    are written in the form of setXXX()  and hence they are called setter methods.
+Class methods are the methods which act on the class variables or static variables. These methods
+    are written using @classmethod decorator above them. These methods are genrally called using
+    the classname.method()
+Class method are written using "cls" as their first parameter.
+Static methods are used when some processing is related to the class but does not need the class
+    or its instances to perform any work. Static methods are written with a decorator @staticmethod
+    above them. Static methods are called in the form of classname.method().
+It is possible to create inner classes within a class. To refer to the inner class members, we can create
+    inner class object as,
+        innerobj = Outerclass().Innerclass()
+        innerobj = outerobj.innerobj

@@ -118,10 +118,10 @@
 #         else:
 #             self.balance -= amount
 #         return self.balance
-#
+
 # name = input("Enter the customer name: ")
 # new_customer = Bank(name)
-#
+# #
 # while True:
 #     print("Select any one of -> d - Deposit, w - Withdraw, e - Exit, b = Balance")
 #     choice = input("Your choice: ")
@@ -216,18 +216,18 @@
 
 # same type similar program
 
-class Person:
-    def __init__(self):
-        self.name = "HB"
-    def display(self):
-        print(f"Name= {self.name}")
-    class Dob():
-        def __init__(self):
-            self.dd = 23
-            self.mm = 8
-            self.yyyy = 1995
-        def display(self):
-            print(f"DOB is {self.dd}/{self.mm}/{self.yyyy}")
+# class Person:
+#     def __init__(self):
+#         self.name = "HB"
+#     def display(self):
+#         print(f"Name= {self.name}")
+#     class Dob():
+#         def __init__(self):
+#             self.dd = 23
+#             self.mm = 8
+#             self.yyyy = 1995
+#         def display(self):
+#             print(f"DOB is {self.dd}/{self.mm}/{self.yyyy}")
 # p = Person()
 # print(Person().name)
 # print(p.name)

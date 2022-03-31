@@ -130,7 +130,165 @@ class Son(Father):
 # r = rec(5, 10)
 # r.area()
 
-
+#
 # a, b = [float(x) for x in input("Enter two measurements: ").split()]
 # r = rec(a, b)
 # r.area()
+
+"""Single Inheritance"""
+
+# class Bank(object):
+#     cash = 100000000
+#
+#     @classmethod
+#     def available_cash(cls):
+#         print(cls.cash)
+#
+#
+# class AndhraBank(Bank):
+#     pass
+#
+#
+# class StateBank(Bank):
+#     cash = 20000000
+#
+#     @classmethod
+#     def available_cash(cls):
+#         print(cls.cash + Bank.cash)
+#
+#
+# b = Bank()
+# print(b.cash)
+# b.available_cash()
+#
+# print()
+# a = AndhraBank()
+# print(a.cash)
+# a.available_cash()
+# print()
+# s = StateBank()
+# print(s.cash)
+# s.available_cash()
+
+"""Multiple Inheritance"""
+
+
+# class Father(object):
+#     def height(self):
+#         print('Height is 6.0 feet')
+#
+#
+# class Mother(object):
+#     def colour(self):
+#         print("Colour is brown")
+#
+#
+# class Child(Father, Mother, object):
+#     pass
+#
+#
+# c = Child()
+# c.colour()
+# c.height()
+
+"""when the child class has init contructor in it"""
+
+
+# class A(object):
+#     def __init__(self):
+#         self.a = "a"
+#         print(self.a)
+#
+# class B(object):
+#     def __init__(self):
+#         self.b = "b"
+#         print(self.b)
+#
+#
+#
+# class C(A, B):
+#     def __init__(self):
+#         self.c = "c"
+#         print(self.c)
+#         super().__init__()
+
+
+# c = C()
+# Problem is only A's instance is called but not B's.
+
+# class C(B, A):
+#     def __init__(self):
+#         self.c = "c"
+#         print(self.c)
+#         super().__init__()
+
+# now the class B's instance is called
+# c = C()
+
+"""class C connot access all the super class's 
+instances anytime to make use all the instance variable of bas class 
+we have to use super().__init__() in every class """
+
+# class A(object):
+#     def __init__(self):
+#         self.a = 'a'
+#         print(self.a)
+#         super().__init__()
+
+# class B(object):
+#     def __init__(self):
+#         self.b = 'b'
+#         print(self.b)
+#         super().__init__()
+#
+# class C(A, B, object):
+#     def __init__(self):
+#         self.c = "c"
+#         print(self.c)
+#         super().__init__()
+#
+# c = C()
+
+# print(B.mro())
+
+"""MRO - several classes"""
+
+
+# class A(object):
+#     def method(self):
+#         print("A class method")
+#         super().method()
+#
+#
+# class B(object):
+#     def method(self):
+#         print("B class method")
+#         super().method()
+#
+#
+# class C(object):
+#     def method(self):
+#         print("C class method")
+#
+#
+# class X(A, B):
+#     def method(self):
+#         print("X class method")
+#         super().method()
+#
+#
+# class Y(B, C):
+#     def method(self):
+#         print("Y class method")
+#         super().method()
+#
+#
+# class P(X, Y, C):
+#     def method(self):
+#         print("P class method")
+#         super().method()
+#
+#
+# p = P()
+# p.method()
+# print(P.mro())

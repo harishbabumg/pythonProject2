@@ -1,0 +1,27 @@
+An ordinary classes can be called rigid classes since they look after the common needs of the objects.
+In the main program, the programmer is supposed to create objects to the sub classes without knowing their names.
+    This is done by using globals() function.
+An API(Application Programming Interface) documentation file is a text file or html file that contains description of the all
+    the features of software, language or a product.
+An abstract method is a method whose action is redifined in the sub classes
+    as per the requirements ofthe objects.
+Generally an abstract method method is written without any body. But it is possible to write an abstract
+    method with body also.
+An abstract class is class that contains some abstract methods. An abstract class can also contain
+    concrete methods.
+Abstract methods are written with a decorator @abstractmethod above them.
+It is not possible to create an object to abstract class.
+Every abstract class should derive from ABC class that is available in abc (abstract base class) module.
+All the abstract methods should be overridden in the sub classes
+we can create an object to sub classes
+An abstract class will become an interface when it contains only abstract methods and there are no concrete
+    methods
+it is not possible to create objects to interfaces
+All the methods in the interface should be implemented in the subclasses
+The built-in function globals()[string] converts the string into a classname and returns a classname
+An abstract class is written when there are some common features shared by all the objects.
+An interface is written when all the features are implemented differently for different objects.
+When interface is written any third party vendor can provide subclasses
+Both the abstract classes and interfaces are examples for polymorphism.
+
+

@@ -1,0 +1,37 @@
+The concept of deriving new classes from the existing classes such that the new classes inherit all the
+    members of the existing classes is called inheritance.
+Already existing class is called super class or base,
+    the newly created class is called sub class or derived class.
+syntax for inheritance is Subclass(Baseclass):
+The main advantage of inheritance is reusability. This will increase the productivity.
+    Variables, methods, also constructors of superclass is available .
+ Writing the constructor in the sub-class will override the constructor of superclass.
+ Writing a method in the sub-class with the same name as that of the super class method is called
+ method overriding.
+ super() is a method is useful to refer to all memebrs of the super class from a sub class.
+    Ex. super().__ini__() # call super class constructor
+        super().__init__(agruments) # call super class constructor and pass agruments
+        super().method() # call super class method
+Deriving one or more sub-classes from a single bas class is called 'single inheritance'.
+Deriving subclasses from multiple (or morethan one) base classes is called multiple inheritance.
+
+
+
+Starting from the current class, searching in parent classes in depth-first,
+    left to right fashion without searching the same class twice is called Method Resolution Order(MRO).
+
+
+
+
+
+In multiple inheritance scenario, any specified attribute or method is searched
+first in the current class class. if not found, the search continues into parent
+classes in depth-first in the left to right fashion without searching the same class twice.
+Searching in this way is called Method Resolution Order(MRO).
+    principles followed by MRO
+        1. Search for the sub-class before going for the base classes.
+        2. When a class inherited from several classes, it searches in the order
+           from left to right in the base classes.
+        3. MRO will not visit any class more than once.
+    To know the MRO, we can use <syntax: class_name.mro()>
+

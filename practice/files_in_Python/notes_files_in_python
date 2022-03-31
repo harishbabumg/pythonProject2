@@ -1,0 +1,39 @@
+data stored on a storage media like hard disk or CD is called a file.
+There are two types of files supported by Python: text files and binary files.
+Text files store data in the form of text or characters. Binary files store data in the form of bytes.
+open() -> opens the file for reading, writing, appending,
+close() -> closes the file.
+read() -> just reads the file
+write-> stores the data inside the file
+for binary files we have to add "b" at the end of the file open mode
+    ex. w -> writing for .txt file, wb -> for writing binary file
+We need not to close the file if we open the file using "with" statement.
+Pickle or serialization is the concept of storing objects into a binary file.
+    In pickling we use dump() method.
+    In unpickling we use load() method.
+Unpickle or de-serialization is the concept of retrieving objects from a binary file.
+seek() -> to move the file pointer to any required position in files.
+tell() -> to know the current position of the file pointer in files.
+encode() -> converts string to bytes(into binary file)
+decode() -> binary string can be converted into ordinary string.
+Accessing the contents of a file randomly by moving the file pointer to any byte in the file is called random accessing.
+    seek() and tell() methods are used in random accessing of a file.
+    It is possible using mmap(memory mapped file) module.
+zipping and unzipping fles can be done using ZipFile class of zipfile module.
+The os (operating system) module is useful to perform several operations on directories
+    like finding the currently working directory, changing to a particular directory,
+    renaming or deleting directories and listing the contents of a directory.
+    current_working_dir = os.getcwd("dirname")
+    change_current_working_dir = os.chdir("dirname")
+    create_new_directory = os.mkdir("dirname")
+    create_multiple_directories = os.makedirs("dirname/dirname1/dirname2")
+    remove_the_directory = os.rmdir("dirname")
+    remove_multiple_directory = os.removedirs("dirname/dirname1/dirname2)
+    rename_the_directory = os.rename("oldname", "newname")
+    to_display_all_contents_of_directory = os.walk(path, [topdown=True, oneerror=None, followlinks=False])
+        path = directory [for current path e can use dot (".")]
+        topdown = traverse in topdown manner
+        oneerror = represents what to do when an error is detected. with "one error",
+                   we can specify a function to be executed if an error is encountered.
+
+The system() method of os module is useful to run command or executable programs from our Python program.

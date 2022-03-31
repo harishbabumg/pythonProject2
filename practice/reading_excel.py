@@ -12,8 +12,8 @@ xl_sheet = xl_obj.sheet_by_name("Marks_sheet")
 data = xl_sheet.get_rows()
 
 # traversing through each row
-# for row in data:
-#     print(row)
+for row in data:
+    print(row)
 
 data = xl_sheet.get_rows()
 

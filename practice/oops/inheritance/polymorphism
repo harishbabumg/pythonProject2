@@ -1,0 +1,39 @@
+If a variable, object or a method exhibits different behaviour in different contexts,
+    it is called polymorphism. Polymorphism has built-in polymorphism
+    examples of polymorphism are:
+        1. Duck typing philosophy of Python
+            In python the object type is distinguished only at runtime. if "it walks like a duck and talks
+            like a duck, it must be a duck" is the principle python follows. this is called Duck typing.
+            ex. even though class of 'human' and 'dog' are different but communicate()
+                method inside their is class is common. so communicate() functions as per
+                the class in which they are called.
+                    if Dog().communicate() -> "Barking"
+                    if Human().communicate() -> "Talking"
+                    here communicate method is same but it's function changes for class to class
+        2. Operator overloading
+            If any operator performs additional actions other than what is is meant for,
+            it is called operator overloading
+            Ex. '+' on 'int', 'str', 'list' takes different function
+
+            Internal methods that can be overridden to act on objects.
+                These methods are called Magic Methods
+
+        3. Method overloading
+            If a method is written such that it can perform more than one task,
+            it is called method overloading.
+            Ex. sum(1, 2) and sum(1, 2, 3), here same sum method takes different parameter and
+                has distinct operations it is called method overloading
+
+            NOTE: Method overloading is not there in Python
+                  but we can achieve it by writing same method with several parameters.
+
+        4. Method overriding
+
+           When there is a method in the super class, writing the same method in the sub class
+            so that it replaces the super class method is called 'Method Overriding'.
+
+Variables are names or tags which point to memory locations where data is stored.
+
+Strong typing is checking the object containing respective attribute in it or not,
+    using hasattr(object, attribute) method.
+

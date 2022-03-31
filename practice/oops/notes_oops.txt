@@ -1,0 +1,28 @@
+An object is anything that really exists in the world and can be distingusihed from other.
+Every object has some behaviour that is characterized by attributes and actions. Attributes are represented
+by variables and actions are performed by by methods. So an object contains variables and methods.
+
+function written inside a class is method.
+
+A class is a model or blueprint for creating objects. A class also contains varibales and methods
+
+An object cannot exist without the class but class can exist without an object.
+
+Encapsulation is a mechanism where the data (variables) and the code (methods) that act on
+the data will bind together.  Ex. class is an example of encapsulation
+
+Hiding unnecessary data and code from the user is abstraction. This is done by writing two underscores before
+the names of the variables or method.
+
+private members can be accessed using name manglisn where the calss name is used with single underfore i and two underscores
+after it in the form of
+    instancename._Classname__variable
+    instancename._Classname__method
+
+procedure oriented approach - procedure and functions
+Object oriented approach - classes and object
+
+python can be writen in Procedure oriented approach or Object oriented approach, based on requirements
+
+
+
