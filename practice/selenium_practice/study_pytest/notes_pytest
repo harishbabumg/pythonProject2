@@ -75,5 +75,5 @@ Pytest Xfail / Skip Tests
     Skipping a test means that the test will not be executed. We can skip tests usin
     @pytest.mark.skip.
 
-Results XML
+*Results XML
     The result.xml will record the test execution result.

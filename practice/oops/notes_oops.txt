@@ -1,6 +1,6 @@
 An object is anything that really exists in the world and can be distingusihed from other.
 Every object has some behaviour that is characterized by attributes and actions. Attributes are represented
-by variables and actions are performed by by methods. So an object contains variables and methods.
+by variables and actions are performed by the methods. So an object contains variables and methods.
 
 function written inside a class is method.
 
@@ -14,8 +14,8 @@ the data will bind together.  Ex. class is an example of encapsulation
 Hiding unnecessary data and code from the user is abstraction. This is done by writing two underscores before
 the names of the variables or method.
 
-private members can be accessed using name manglisn where the calss name is used with single underfore i and two underscores
-after it in the form of
+private members can be accessed using 'name mangling' where the class name is used with single underscore it and
+two underscores after it in the form of
     instancename._Classname__variable
     instancename._Classname__method
 

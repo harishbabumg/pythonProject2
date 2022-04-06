@@ -5,6 +5,7 @@ xl_sheet = xl_obj.sheet_by_name("project_status")
 data = xl_sheet.get_rows()
 header = next(data)
 
+
 def ticket(data):
     for item in data:
         yield ("tt.amazon.com/"+f"{item[4].value}")

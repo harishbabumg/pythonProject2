@@ -1,11 +1,11 @@
 An ordinary classes can be called rigid classes since they look after the common needs of the objects.
 In the main program, the programmer is supposed to create objects to the sub classes without knowing their names.
     This is done by using globals() function.
-An API(Application Programming Interface) documentation file is a text file or html file that contains description of the all
-    the features of software, language or a product.
-An abstract method is a method whose action is redifined in the sub classes
-    as per the requirements ofthe objects.
-Generally an abstract method method is written without any body. But it is possible to write an abstract
+An API(Application Programming Interface) documentation file is a text file or html file that contains description
+    of the all the features of software, language or a product.
+An abstract method is a method whose action is redefined in the sub classes
+    as per the requirements of the objects.
+Generally an abstract method is written without any body. But it is possible to write an abstract
     method with body also.
 An abstract class is class that contains some abstract methods. An abstract class can also contain
     concrete methods.

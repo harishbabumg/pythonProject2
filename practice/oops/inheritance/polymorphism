@@ -10,6 +10,7 @@ If a variable, object or a method exhibits different behaviour in different cont
                     if Dog().communicate() -> "Barking"
                     if Human().communicate() -> "Talking"
                     here communicate method is same but it's function changes for class to class
+
         2. Operator overloading
             If any operator performs additional actions other than what is is meant for,
             it is called operator overloading

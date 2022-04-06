@@ -1,4 +1,5 @@
 import sys
+
 # class Teacher:
 #     def setid(self, id):
 #         self.id = id
@@ -20,10 +21,9 @@ import sys
 #
 #     def setsalary(self, salary):
 #         self.salary = salary
-
-
-    # def getsalary(self):
-    #     return self.salary
+#
+#     def getsalary(self):
+#         return self.salary
 
 # inheriting from Teacher class
 
@@ -49,16 +49,16 @@ import sys
 
 """Constructors in inheritance"""
 
-class Father:
-    def __init__(self):
-        self.property = 800000.00
-
-    def display(self):
-        print(f"Fathers's property: {self.property}")
-
-class Son(Father):
-    pass
-
+# class Father:
+#     def __init__(self):
+#         self.property = 800000.00
+#
+#     def display(self):
+#         print(f"Fathers's property: {self.property}")
+#
+# class Son(Father):
+#     pass
+#
 # s = Son()
 # print(s.property)
 # s.display()
@@ -98,12 +98,12 @@ class Son(Father):
 #         print(f"Son's property is {self.property1}, His father's propety is {self.property}")
 #
 # s = Father()
-# # s.property = 10000
-# # print(s.property)
+# s.property = 10000
+# print(s.property)
 # s.display()
-#
+# #
 # c = Son()
-# # print(c.property1)
+# print(c.property1)
 # c.display()
 
 #  similar program
@@ -215,7 +215,7 @@ class Son(Father):
 
 # c = C()
 # Problem is only A's instance is called but not B's.
-
+#
 # class C(B, A):
 #     def __init__(self):
 #         self.c = "c"
@@ -234,7 +234,7 @@ we have to use super().__init__() in every class """
 #         self.a = 'a'
 #         print(self.a)
 #         super().__init__()
-
+#
 # class B(object):
 #     def __init__(self):
 #         self.b = 'b'
@@ -287,8 +287,8 @@ we have to use super().__init__() in every class """
 #     def method(self):
 #         print("P class method")
 #         super().method()
-#
-#
+# #
+# #
 # p = P()
 # p.method()
 # print(P.mro())

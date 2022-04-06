@@ -10,8 +10,8 @@ for binary files we have to add "b" at the end of the file open mode
 We need not to close the file if we open the file using "with" statement.
 Pickle or serialization is the concept of storing objects into a binary file.
     In pickling we use dump() method.
-    In unpickling we use load() method.
 Unpickle or de-serialization is the concept of retrieving objects from a binary file.
+    In unpickling we use load() method.
 seek() -> to move the file pointer to any required position in files.
 tell() -> to know the current position of the file pointer in files.
 encode() -> converts string to bytes(into binary file)

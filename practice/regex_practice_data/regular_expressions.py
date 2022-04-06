@@ -2,8 +2,8 @@ import re
 import time
 import urllib
 from urllib import request
-# path1 = r'C:\Users\haris\PycharmProjects\pythonProject2\practice\regex_practice_data\salaries_regex'
-# path2 = r'C:\Users\haris\PycharmProjects\pythonProject2\practice\regex_practice_data\newfile_regex'
+path1 = r'C:\Users\haris\PycharmProjects\pythonProject2\practice\regex_practice_data\salaries_regex'
+path2 = r'C:\Users\haris\PycharmProjects\pythonProject2\practice\regex_practice_data\newfile_regex'
 
 
 # COMPILE, SEARCH, MATCH, FINDALL
@@ -22,7 +22,7 @@ from urllib import request
 # print(result.group())
 
 # string2 = 'man sum mop run'
-#
+# # #
 # result = re.search(r'm\w\w', string2)
 # print(result.group())  # searches only first element
 #
@@ -47,9 +47,9 @@ from urllib import request
 # string = "An apple a day keeps the doctor away"
 # result = re.findall(r'a[\w]*', string)
 # print(result)  # even 'ay' in 'day' is printing which not required
-# # for item in result:
-# #     print(item)
-#
+# for item in result:
+#     print(item)
+
 # result = re.findall(r'\ba[\w]*\b', string)
 # print(result)  # words starting with 'a' and having space before and after are printed
 
@@ -138,7 +138,7 @@ character in curly braces e.g. {m} represents repetition for 'm' times"""
 # to check if the string is starting with a specified words
 # string = "Hai Bengaluru"
 
-# result = re.findall(fr'^H', string)
+# result = re.findall(r'^H', string)
 # if result:
 #     print("String is starting with H")
 # else:
@@ -182,7 +182,7 @@ character in curly braces e.g. {m} represents repetition for 'm' times"""
 #         print(res)
 # path1 = r'C:\Users\haris\PycharmProjects\pythonProject2\practice\regex_practice_data\salaries_regex'
 # path2 = r'C:\Users\haris\PycharmProjects\pythonProject2\practice\regex_practice_data\newfile_regex'
-# reading and writing the file
+# # reading and writing the file
 # f1 = open(path1, 'r')
 # f2 = open(path2, 'w')
 # reading nd extracting from one file and
@@ -208,3 +208,5 @@ character in curly braces e.g. {m} represents repetition for 'm' times"""
 # fin_res = list(zip(result1, result2))
 # for item in fin_res:
 #     print(item)
+
+

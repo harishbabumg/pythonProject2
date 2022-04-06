@@ -1,1 +1,31 @@
-
+A regular expression is a string that contains special symbols and characters to find and
+    extract the information nedded bu us from the given data.
+Generally rawstrings are used in creation of regular expressions.
+    As normal strings would retain the meaning of escape characters.
+match() method searches in the beginning of the string and returns result in an object.
+findall() method searches the string from beginning till the end and returns all occurrences of the matching
+    string in the form of a list object.
+split() method splits the string according to the regular expression and
+    the resultant pieces are returned as a list
+sub() method substitutes new strings in the places of existing strings in the main string.
+\d represents any numeric digit from 0-9
+\D represents any non-numeric digit.
+\s represents white spaces like \t,\n, \r, \f, or \v.
+\S represents a chracter that is not white space.
+\w represents any alphanumeric character i.e. AtoZ,atoz,0to9
+\W represents any non-alphanumeric character.
+\A matches only the start of the string
+\Z matches only the end of the string.
++ represents one or more repetions.
+* represents 0 or more repetions.
+? represents 0 or one repetions of the preceding expression.
+{m} indicates exactly m occurrences.
+{m, n} indicates from m to n.
+. mathces any characters except new line
+^ matches beginning of a string
+$ matches ending of a string
+[...] denotes a set of possible character
+[^...] matches every character except the ones inside brackets.
+(...) matches the regular expression inside the paraentheses and the result can be captured.
+R|S matches either R or S
+it is possible to use regular expression on the files including HTML files.

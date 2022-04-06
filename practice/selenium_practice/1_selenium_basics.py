@@ -47,7 +47,7 @@
 #     ex. (//input[@name=‘Gender’])[2]
 #
 # """
-# # To check the checkboxes
+#"""To check the checkboxes"""
 # # driver = webdriver.Chrome("./chromedriver")
 # # driver.get("file:///C:/Users/haris/OneDrive/Desktop/python_class/html-20220308T105145Z-001/html/demo%20(1).html")
 # # driver.maximize_window()
@@ -56,7 +56,7 @@
 # # for language in languages:
 # #     driver.find_element_by_xpath(f"//td[text()='{language}']/..//input[@name='download']").click()
 # #     time.sleep(2)
-#
+#f
 # # sample
 # """
 # Dynamic XPath is also called as custom XPath and it is one way to locate element uniquely.
@@ -94,7 +94,8 @@
 #     entire webpage
 #     //div[@name=‘login’]//input matches all
 #     the input elements under the division(div) “login”
-#     //div[@name=‘login’]/input matches all the
+#     //div[@name=‘login’]
+#     /input matches all the
 #     input elements which are immediate children of
 #     division “login”
 #
@@ -668,7 +669,7 @@
 #     message, and a single button
 #     which dismisses the alert,
 #     labelled in most browsers as
-#     OK.
+#     'OK'.
 #     WebDriver can get the text
 #     from the popup and accept or
 #     dismiss these alerts.
@@ -848,7 +849,7 @@
 #     Possible cause may be the element is disabled
 # TimeoutException
 #     Usually thrown by until method of WebDriverWait class
-#     Possible cause would be when the command does not complete with in specified timeout period
+#     Possible cause would be when the command does not complete within specified timeout period
 # NoSuchFrameException
 #     Thrown when frame target to be switched doesn't exist
 # """
@@ -1004,6 +1005,7 @@
 # # GENERATING REPORTS
 # #     To Generate test results in html format, we need
 # #     to install a plugin pytest-html
+#        pytest test_note.py --html="reports.html"
 # # """
 #
 # # """READING EXCEL"""

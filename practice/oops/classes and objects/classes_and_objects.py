@@ -19,8 +19,8 @@
 #             print("You got third class")
 #         else:
 #             print("You are failed")
-#
-#
+# # #
+# # #
 # n = int(input("How many students ? "))
 # i = 0
 # while (i < n):
@@ -32,7 +32,7 @@
 #     s.calculate()
 #     i += 1
 #     print("------------------------------------------------")
-#
+# #
 # s1 = Student("Harish Babu M G", 600, 25)
 # s1.display()
 
@@ -65,6 +65,7 @@
 #     print(f"Hi, {s.getName()}")
 
 # class methods
+
 # class Bird:
 #     wings = 2 # variables
 #
@@ -88,6 +89,8 @@
 #
 # a = Myclass()
 # b = Myclass()
+# aa = Myclass()
+# ba = Myclass()
 # Myclass.noObjects()  # No. of instances created: 2
 
 # import math
@@ -102,7 +105,7 @@
 
 # BANK class
 # import sys
-#
+# #
 # class Bank(object):
 #     def __init__(self, name, balance=0.0):
 #         self.name = name
@@ -118,7 +121,7 @@
 #         else:
 #             self.balance -= amount
 #         return self.balance
-
+#
 # name = input("Enter the customer name: ")
 # new_customer = Bank(name)
 # #
@@ -172,10 +175,10 @@
 #     def mymethod(e):
 #         e.salary += 1000
 #         e.display()
-#
-#
-# s = Employee("123", "HB", 26000)
-# Myclass.mymethod(s)
+# #
+# #
+# e = Employee("123", "HB", 26000)
+# Myclass.mymethod(e)
 
 # calculate power with help of static method
 
@@ -210,7 +213,8 @@
 #
 # p = Person()
 # x = p.Dob()
-#
+# print(p.Dob().dd)
+# print(Person().Dob().display())
 # p.display()
 # x.display()
 
@@ -229,9 +233,9 @@
 #         def display(self):
 #             print(f"DOB is {self.dd}/{self.mm}/{self.yyyy}")
 # p = Person()
-# print(Person().name)
-# print(p.name)
-# p.display()
-# print(p.Dob().mm)
+# # print(Person().name)
+# # print(p.name)
+# # p.display()
+# # print(p.Dob().mm)
 # p.Dob().display()
 # Person().Dob().display()

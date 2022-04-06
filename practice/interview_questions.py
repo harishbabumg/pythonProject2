@@ -845,7 +845,7 @@ the list without using any inbuilt functions"""
 
 """63 Write a function to check if the number is Prime"""
 # def prime(n):
-#
+# #
 #     for num in range(2, n):
 #         if n % num == 0:
 #             print("it's not prime num")
@@ -855,8 +855,8 @@ the list without using any inbuilt functions"""
 #             print("it's prime")
 #             # sys.exit()
 #             break
-#
-#
+# #
+# #
 # prime(7)
 
 """64 How to create a tuple using range function"""
@@ -1296,3 +1296,138 @@ python3- range
 #       print('* '*1)
 #       j = i + 1
 #       print('* '*j)
+
+"""89 Write a program to get the below output"""
+# a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# n = 0
+# x = 1
+# for i in range(0, len(a), 2):
+#       print(a[i:i+2])
+
+"""90 Write a program to check if the elements in the second list is series of continuation 
+    of the items in the first list"""
+# a = [10, 12, 14, 16, 18]
+# b = [20, 22, 24, 26, 28]
+#
+# n = 0
+# for n in range(0, len(a)):
+#     if not abs(a[n-1] - a[n]) == abs(b[n-1] - b[n]):
+#         print(True)
+
+"""91 What is the difference between append() and extend() method in list"""
+
+"""
+1. append() method appends one item at the end of the list.
+2. extend() method appends all the items of the iterable to the end of the list.
+3. Both append() and extend() method's mutates the existing list.
+"""
+# a = [1, 2, 3]
+# b = (4, 5, 6)
+# a.extend(b)
+# print(a)
+
+# a = [1, 2, 3, 4, 5, 6, 8, 9, 7]
+# d = {'a': 1, 'b': 2, 'c': 3}
+# a.extend(d)
+# print(a)
+
+"""92 Write a program to find the first repeating character in a string"""
+# s = "Hello world"
+#
+# for _ in s:
+#     if s.count(_) > 1:
+#         print(_)
+#         break
+
+"""93 Write a program to find the index of nth occurrence of a sub-string in a string"""
+sentence = "hello world welcome to python hello hi how are you hello there"
+
+
+# def index_nth_occurance(sentence, pat, n):
+#     matches = re.finditer(pat, sentence)
+#     _count = 0
+#     for match in matches:
+#         _count += 1
+#         if _count == n:
+#             return f"Start Index: {match.start()}, End Index: {match.end()}"
+#
+# print(index_nth_occurance(sentence, "hello", 2))
+
+# def word(sentence, sub):
+#     print(sentence.index(sub))
+#
+# word(sentence, "to")
+
+"""94 Write a program to print prime numbers from 1 to 50"""
+import sys
+
+# def pr(num):
+#     for n in range(2, num):
+#         if num % n == 0:
+#             # print(f"{num} is Not prime")
+#             break
+#         else:
+#             print(f"{num} is prime number")
+#             break
+# pr(53)
+
+# for num in range(1, 51):
+#     if pr(num) == f"{num} is prime number":
+#         pass
+
+"""98 Grouping Flowers and Animals in the below list"""
+
+# items = ['lotus-flower', 'lilly-flower', 'cat-animal', 'sunflower-flower', 'dog-animal']
+#
+# dd = {"flower": None, "animal": None}
+# fl = []
+# an = []
+# for ele in items:
+#     a = ele.split("-")
+#     if a[-1] == "flower":
+#         fl.append(a[0])
+#         dd["flower"] = fl
+#     elif a[-1] == "animal":
+#         an.append(a[0])
+#         dd["animal"] = an
+# print(dd)
+
+"""99 Grouping files with same extensions
+"""
+# files = ['apple.txt', 'yahoo.pdf', 'gmail.pdf', 'google.txt', 'amazon.pdf', 'facebook.txt', 'flipkart.pdf']
+# dd={"txt": None, "pdf": None}
+#
+# txt = []
+# pdf = []
+# for ele in files:
+#     a = ele.split(".")
+#     if a[-1] == "txt":
+#         txt.append(ele)
+#         dd["txt"] = txt
+#
+#     elif a[-1] == "pdf":
+#         pdf.append(ele)
+#         dd["pdf"] = pdf
+# print(dd)
+#
+# a = [1, 2, 3]
+# b = [4,5,6]
+# print(list(zip(a, b)))
+
+
+def outer(func):
+    def wrapper(*args, **kwargs):
+        print("$$$$$$$$$$$$$$$")
+        a = func(*args, **kwargs)
+        a
+        print("$$$$$$$$$$$$$$$")
+
+    return wrapper
+
+
+@outer
+def ss():
+    print(1+2)
+
+ss()
+

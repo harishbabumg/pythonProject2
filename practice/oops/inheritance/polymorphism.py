@@ -27,7 +27,7 @@ import math
 #
 # y = Human()
 # call_talk(y)
-#
+
 # z = Dog()
 # call_talk(z)  # AttributeError: 'Dog' object has no attribute 'talk'
 
@@ -55,13 +55,13 @@ import math
 
 #  addition to add the pages of the book
 
-# class Bookx:
-#     def __init__(self, pages):
-#         self.pages = pages
-#
-# class Booky(object):
-#     def __init__(self, pages):
-#         self.pages = pages
+class Bookx:
+    def __init__(self, pages):
+        self.pages = pages
+
+class Booky(object):
+    def __init__(self, pages):
+        self.pages = pages
 #
 # b1 = Bookx(40)
 # b2 = Booky(60)
@@ -110,10 +110,10 @@ import math
 #         return self.pages > other.pages
 #
 # print(1>2)
-
+#
 # r = Ramayana(1000)
 # m = Mahabharatha(2000)
-
+#
 # print(m>r)
 
 
@@ -137,7 +137,7 @@ import math
 #         return self.days * other.salary
 #
 #
-# print(10*10)
+# # print(10*10)
 #
 # e = Employee("HB", 1000)
 # a = Attendance("HB", 20)
@@ -153,9 +153,9 @@ import math
 #             print(f"Sum of two= {a+b}")
 #         else:
 #             print('Please enter any two or three values')
-#
+
 # m = Myclass()
-#
+# #
 # (m.sum(1, 5, 45))
 # m.sum(1.2, 5.3, 5.001)
 
@@ -163,7 +163,7 @@ import math
 
 # import math
 # from math import pi
-#
+# #
 # class Square(object):
 #     def area(self, x):
 #         print(f"Area of square = {x * x}")
@@ -172,9 +172,11 @@ import math
 #     def area(self, x):
 #         print(f"Area of a circle = {pi * x * x}")
 #
-# c = Circle()
-# c.area(10)
+#
 # s = Square()
 # s.area(15)
+# c = Circle()
+# c.area(10)
+
 
 
